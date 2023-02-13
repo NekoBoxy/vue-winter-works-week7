@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 // Import all of Bootstrap's JS
+// eslint-disable-next-line no-unused-vars
 import * as bootstrap from "bootstrap";
 
 import App from "./App.vue";

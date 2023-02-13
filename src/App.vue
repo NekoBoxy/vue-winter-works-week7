@@ -1,10 +1,7 @@
 <template>
   <div>
-    <HomeView></HomeView>
-  </div>
-  <br />
-  <div>
-    <AboutView></AboutView>
+    <HomeView to="/"></HomeView> |
+    <AboutView :to="{ name: 'about' }"></AboutView>
   </div>
 </template>
 
