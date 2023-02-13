@@ -1,23 +1,46 @@
 <template>
-  <div>
-    <HomeView to="/"></HomeView> |
-    <AboutView :to="{ name: 'about' }"></AboutView>
-  </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <router-link to="/" class="nav-link active">home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/about" class="nav-link">about</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link :to="{ name: 'newpage' }" class="nav-link">
+              newpage
+            </router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <RouterView />
 </template>
 
 <script>
 import { RouterLink, RouterView } from "vue-router";
-import HomeView from "./views/HomeView.vue";
-import AboutView from "./views/AboutView.vue";
 
 export default {
   props: {
     RouterLink,
     RouterView,
   },
-  components: {
-    HomeView,
-    AboutView,
-  },
+  components: {},
 };
 </script>
