@@ -10,8 +10,8 @@ export default {
     };
   },
   mounted() {
-    console.log(import.meta.env.VITE_URL);
-    console.log(import.meta.env.VITE_PATH);
+    // console.log(import.meta.env.VITE_URL);
+    // console.log(import.meta.env.VITE_PATH);
   },
 };
 </script>
