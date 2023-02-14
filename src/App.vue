@@ -2,8 +2,16 @@
   <RouterView />
 </template>
 
-<script setup>
-import { RouterView } from "vue-router";
+<script>
+import { RouterLink, RouterView } from "vue-router";
+
+export default {
+  props: {
+    RouterLink,
+    RouterView,
+  },
+  components: {},
+};
 </script>
 
 <style scoped>
