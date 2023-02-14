@@ -1,5 +1,5 @@
 <template>
-  <div>我是首頁內容 homeview</div>
+  <div>我是購物車cartview</div>
 </template>
 
 <script>

@@ -2,25 +2,59 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.VITE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      component: () => import("../views/IndexView.vue"),
+      children: [
+        {
+          path: "/",
+          component: HomeView,
+        },
+        {
+          path: "about",
+          component: () => import("../views/AboutView.vue"),
+        },
+        {
+          path: "cart",
+          component: () => import("../views/CartView.vue"),
+        },
+        {
+          path: "products",
+          component: () => import("../views/ProductsView.vue"),
+        },
+        {
+          path: "Product/:id",
+          component: () => import("../views/ProductView.vue"),
+        },
+      ],
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      path: "/login",
+      component: () => import("../views/LoginView.vue"),
     },
     {
-      path: "/newpage",
-      name: "newpage",
-      component: () => import("../views/NewPage.vue"),
+      path: "/admin",
+      component: () => import("../views/admin/IndexView.vue"),
+      children: [
+        {
+          path: "/admin/orders",
+          component: () => import("../views/admin/OrdersView.vue"),
+        },
+        {
+          path: "/admin/coupons",
+          component: () => import("../views/admin/CouponsView.vue"),
+        },
+        {
+          path: "/admin/products",
+          component: () => import("../views/admin/ProductsView.vue"),
+        },
+        {
+          path: "/admin/product",
+          component: () => import("../views/admin/ProductView.vue"),
+        },
+      ],
     },
   ],
 });

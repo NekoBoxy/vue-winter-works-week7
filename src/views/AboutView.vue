@@ -1,3 +1,14 @@
 <template>
-  <div>it's AboutView.vue</div>
+  <div>我是關於我aboutview</div>
 </template>
+
+<script>
+export default {
+  data() { },
+  methods: [],
+};
+</script>
+
+<style scoped>
+
+</style>
