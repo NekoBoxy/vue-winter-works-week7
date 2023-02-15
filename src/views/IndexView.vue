@@ -1,4 +1,5 @@
 <template>
+<div>我是前台</div>
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>

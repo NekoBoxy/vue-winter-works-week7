@@ -6,7 +6,7 @@
             <form id="form" class="form-signin" v-on:submit.prevent="handleLogin">
               <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="username" placeholder="name@example.com"
-                  v-model="username" required autofocus />
+                  v-model="username" required/>
                 <label for="username">Email address</label>
               </div>
               <div class="form-floating">

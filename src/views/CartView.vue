@@ -1,5 +1,5 @@
 <template>
-  <div>我是購物車cartview</div>
+  <div>我是購物車 cartview</div>
 </template>
 
 <script></script>

@@ -1,10 +1,8 @@
 <template>
-  
+  <div>我是後台 coupons :D</div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style scoped>
 

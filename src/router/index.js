@@ -50,10 +50,6 @@ const router = createRouter({
           path: "/admin/products",
           component: () => import("../views/admin/ProductsView.vue"),
         },
-        {
-          path: "/admin/product",
-          component: () => import("../views/admin/ProductView.vue"),
-        },
       ],
     },
   ],

@@ -1,10 +1,8 @@
 <template>
-  
+  <div>我是後台 orders</div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style scoped>
 
