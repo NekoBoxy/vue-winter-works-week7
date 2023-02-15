@@ -7,16 +7,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item nav-link">
+        <li class="nav-item nav-link p-3">
           <RouterLink to="/">首頁</RouterLink>
         </li>
-        <li class="nav-item nav-link">
+        <li class="nav-item nav-link p-3">
           <RouterLink to="/about">關於我們</RouterLink>
         </li>
-        <li class="nav-item nav-link">
+        <li class="nav-item nav-link p-3">
           <RouterLink to="/cart">購物車</RouterLink>
         </li>
-        <li class="nav-item nav-link">
+        <li class="nav-item nav-link p-3">
           <RouterLink to="/products">產品一覽</RouterLink>
         </li>
         <!-- <li class="nav-item">
@@ -31,8 +31,7 @@
 
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
 

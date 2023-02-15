@@ -2,12 +2,7 @@
   <div>我是首頁內容 homeview</div>
 </template>
 
-<script>
-export default {
-  data() { },
-  methods: [],
-};
-</script>
+<script></script>
 
 <style scoped>
 

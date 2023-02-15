@@ -2,8 +2,7 @@
   <div>我是購物車cartview</div>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
 

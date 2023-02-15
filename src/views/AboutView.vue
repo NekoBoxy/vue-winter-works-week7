@@ -2,8 +2,7 @@
   <div>我是關於我</div>
 </template>
 
-<script>
-</script>
+<script></script>
 
 <style scoped>
 
