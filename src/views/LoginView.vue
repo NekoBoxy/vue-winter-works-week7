@@ -1,30 +1,22 @@
 <template>
-  <div class="container">
-        <div class="row justify-content-center">
-          <h1 class="h3 mb-3 font-weight-normal">請先登入</h1>
-          <div class="col-8">
-            <form id="form" class="form-signin" v-on:submit.prevent="handleLogin">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="username" placeholder="name@example.com"
-                  v-model="username" required autofocus />
-                <label for="username">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="password" placeholder="Password"
-                  v-model="password" required />
-                <label for="password">Password</label>
-              </div>
-              <button class="btn btn-lg btn-primary w-100 mt-3" type="submit">
-                登入
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
+  <!-- 3. 使用 AdminLogi 元件 -->
+  <AdminLogin />
 </template>
 
 <script>
+// 1. 引入 AdminLogin 元件
+import AdminLogin from "../components/AdminLogin.vue";
+export default {
+  data() {
+    return {
+
+    };
+  },
+  components: {
+    // 2. 註冊 AdminLogin 元件
+    AdminLogin,
+  },
+};
 </script>
 
 <style scoped>

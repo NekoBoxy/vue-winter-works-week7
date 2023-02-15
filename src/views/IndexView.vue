@@ -19,6 +19,9 @@
         <li class="nav-item nav-link p-3">
           <RouterLink to="/products">產品一覽</RouterLink>
         </li>
+        <li class="nav-item nav-link p-3">
+          <RouterLink to="/login">登入</RouterLink>
+        </li>
         <!-- <li class="nav-item">
           <RouterLink to="/product">單獨產品</RouterLink>
         </li> -->
