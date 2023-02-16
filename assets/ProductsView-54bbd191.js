@@ -1,0 +1,1 @@
+import{_ as t,o as e,c as d,r as u,e as p}from"./index-f6d9225a.js";const $={data(){return{}},methods:{}};function f(o,c,r,n,s,a){return e(),d("div",null,"我是前台 getProducts.Vue :D")}const i=t($,[["render",f]]),m={data(){return{}},components:{GetProducts:i}};function l(o,c,r,n,s,a){const _=u("GetProducts");return e(),p(_)}const x=t(m,[["render",l]]);export{x as default};
