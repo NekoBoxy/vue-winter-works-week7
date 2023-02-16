@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.VITE_URL),
@@ -10,29 +9,33 @@ const router = createRouter({
       children: [
         {
           path: "/",
-          component: HomeView,
+          component: () => import("../views/HomeView.vue"),
         },
         {
-          path: "about",
+          path: "/about",
           component: () => import("../views/AboutView.vue"),
         },
         {
-          path: "cart",
+          path: "/cart",
           component: () => import("../views/CartView.vue"),
         },
         {
-          path: "products",
+          path: "/products",
           component: () => import("../views/ProductsView.vue"),
         },
         {
-          path: "Product/:id",
+          path: "/product/:id",
           component: () => import("../views/ProductView.vue"),
         },
         {
-          path: "login",
-          component: () => import("../views/LoginView.vue"),
+          path: "/:pathMatch(.*)*",
+          component: () => import("../views/HomeView.vue"),
         },
       ],
+    },
+    {
+      path: "/login",
+      component: () => import("../views/LoginView.vue"),
     },
     {
       path: "/admin",

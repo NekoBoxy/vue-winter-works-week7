@@ -9,19 +9,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item nav-link p-3">
-          <RouterLink to="/admin">後台首頁</RouterLink>
+          <RouterLink to="/">回前台首頁</RouterLink>
         </li>
         <li class="nav-item nav-link p-3">
-          <RouterLink to="/admin/orders">訂單</RouterLink>
+          <RouterLink to="/admin/orders">訂單一覽</RouterLink>
         </li>
         <li class="nav-item nav-link p-3">
-          <RouterLink to="/admin/coupons">優惠碼</RouterLink>
+          <RouterLink to="/admin/coupons">優惠碼一覽</RouterLink>
         </li>
         <li class="nav-item nav-link p-3">
-          <RouterLink to="/admin/products">產品</RouterLink>
-        </li>
-        <li class="nav-item nav-link p-3">
-          <RouterLink to="/login">登入</RouterLink>
+          <RouterLink to="/admin/products">產品一覽</RouterLink>
         </li>
       </ul>
     </div>
@@ -31,7 +28,22 @@
 <RouterView />
 </template>
 
-<script></script>
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
+  methods: {
+    checkLogin() {
+    },
+  },
+};
+</script>
 
 <style scoped>
 
