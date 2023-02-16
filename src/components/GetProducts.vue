@@ -1,18 +1,18 @@
 <template>
-  <GetProducts />
+  <div>我是前台 getProducts.Vue :D</div>
 </template>
 
 <script>
-import GetProducts from "../components/GetProducts.vue"
+// import axios from "axios";
 
 export default {
   data() {
     return {
-
     };
   },
-  components: {
-    GetProducts,
+  methods: {
+    // async handleLogin() {
+    // },
   },
 };
 </script>

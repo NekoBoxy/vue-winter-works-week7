@@ -25,10 +25,8 @@
       </div>
     </div>
   </nav>
+  <RouterView />
 </div>
-  
-
-<RouterView />
 </template>
 
 <script>
