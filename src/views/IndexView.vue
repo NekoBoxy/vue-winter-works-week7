@@ -20,16 +20,15 @@
         <li class="nav-item nav-link p-3">
           <RouterLink to="/products">產品一覽</RouterLink>
         </li>
-        <!-- <li class="nav-item">
-          <RouterLink to="/product">單獨產品</RouterLink>
-        </li> -->
+        <li class="nav-item nav-link p-3">
+          <RouterLink to="/admin/orders">訂單一覽</RouterLink>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 
 <RouterView />
-
 </template>
 
 <script></script>

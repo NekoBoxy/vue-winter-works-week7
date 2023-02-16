@@ -37,7 +37,7 @@ export default {
     async handleLogin() {
       const response = await axios({
         method: "post",
-        url: `${import.meta.env.VITE_BASE_URL}/admin/signin`,
+        url: `${import.meta.env.VITE_BASE_URL}/v2/admin/signin`,
         data: {
           username: this.username,
           password: this.password,
@@ -54,7 +54,7 @@ export default {
       // 將取得的 token & expired 存入 cookie
       document.cookie = `hextoken=${token}; expires=${new Date(expired)}`;
       // 跳轉頁面
-      this.$router.push("/admin/products");
+      this.$router.push({ path: "/admin/products" });
     },
   },
 };
