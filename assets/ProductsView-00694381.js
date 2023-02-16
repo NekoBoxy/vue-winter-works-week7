@@ -1,1 +1,0 @@
-import{_ as e,o,c as t}from"./index-993dd325.js";const n={data(){return{}},components:{AdminLogin}};function c(r,s,a,p,_,d){return o(),t("div",null,"我是產品一覽")}const u=e(n,[["render",c]]);export{u as default};
