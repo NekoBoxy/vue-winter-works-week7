@@ -49,7 +49,7 @@ export default {
       if (!hextoken) {
         // 若 token 不存在則跳轉至 login 頁
         this.$router.push("/login");
-        // 中止運行 checkLogin
+        // 中止運行 checkLogin()
         return;
       }
       // 若 token 存在，找出 token，axios 踹 api 以驗證 token 是否正確。
@@ -64,10 +64,11 @@ export default {
         document.cookie = "hextoken=;expired=";
         this.$router.push("/login");
       });
+      // 若 token 存在並通過驗證，打開 <div v-if="visible">
       this.visible = true;
     },
   },
-  // mounted 時執行 checkLogin
+  // mounted 時執行 checkLogin()
   async mounted() {
     await this.checkLogin();
   },
