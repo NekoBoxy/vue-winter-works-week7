@@ -2,8 +2,8 @@
   <div class="container">
     <div>我是前台</div>
     <RouterLink to="/">首頁</RouterLink>
-    <span>｜</span>
-    <RouterLink to="/about">關於我們</RouterLink>
+    <!-- <span>｜</span>
+    <RouterLink to="/about">關於我們</RouterLink> -->
     <span>｜</span>
     <RouterLink to="/cart">購物車</RouterLink>
     <span>｜</span>
