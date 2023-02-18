@@ -8,11 +8,6 @@
 import CheckLogin from "../components/CheckLogin.vue";
 
 export default {
-  data() {
-    return {
-
-    };
-  },
   components: {
     // 2. 註冊 CheckLogin 元件
     CheckLogin,

@@ -1,5 +1,5 @@
 <template>
-  <table>
+  <table class="table align-middle">
     <thead>
       <tr>
         <th>產品圖片</th>
@@ -63,9 +63,11 @@ export default {
         data: {
           data: { product_id, qty },
         },
-      }).catch((error) => {
-        console.log("error:", error);
       });
+      console.log("已加入購物車");
+      // }).catch((error) => {
+      //   console.log("error:", error);
+      // });
     },
   },
   async mounted() {
