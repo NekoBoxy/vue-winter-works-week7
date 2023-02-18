@@ -25,10 +25,8 @@
           <div v-if="product.price">現在只要 {{ product.price }} 元</div>
         </td>
         <td>
-          <RouterLink class="btn btn-primary" to="/product/:id">點我看更多</RouterLink>
-          <button type="button" class="btn btn-primary" v-on:click="addCart">
-            加入購物車
-          </button>
+          <RouterLink :to="`/product/${product.id}`" class="btn btn-outline-secondary">點我看更多</RouterLink>
+          <button v-on:click="addToCart(product.id)" type="button" class="btn btn-outline-secondary">加入購物車</button>
         </td>
       </tr>
     </tbody>
@@ -42,6 +40,7 @@ export default {
   data() {
     return {
       products: {},
+      data: {},
     };
   },
   components: {
@@ -53,21 +52,23 @@ export default {
         method: 'get',
         url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/products/all`
       });
-      console.log(response.data.products[0]);
+      // console.log(response.data.products[0]);
       this.products = response.data.products;
-      // id:"-NKvnf1bffrjdh8X-Xqi"
     },
     // 加入購物車
-    // async addCart(product_id, qty = 1) {
-    //   await axios({
-    //     method: 'post',
-    //     url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/cart`,
-    //     data: {
-    //       data: { product_id, qty }
-    //     },
-    //   });
-    //   console.log(product_id, qty);
-    // },
+    async addToCart(product_id, qty = 1) {
+      await axios({
+        method: 'post',
+        url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/cart`,
+        data: {
+          data: { product_id, qty },
+        },
+      }).catch((error) => {
+        console.log(error);
+      }).then((response) => {
+        console.log(response);
+      });
+    },
   },
   async mounted() {
     await this.GetProducts();

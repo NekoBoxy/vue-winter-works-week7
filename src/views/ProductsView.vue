@@ -1,9 +1,9 @@
 <template>
-  <GetProducts />
+  <ListProducts />
 </template>
 
 <script>
-import GetProducts from "../components/GetProducts.vue"
+import ListProducts from "../components/ListProducts.vue"
 
 export default {
   // data() {
@@ -12,7 +12,7 @@ export default {
   //   };
   // },
   components: {
-    GetProducts,
+    ListProducts,
   },
   mounted() {
   },

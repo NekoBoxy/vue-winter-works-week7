@@ -1,9 +1,21 @@
 <template>
 <div>
-  <h2>單一產品細節</h2>
-  <div>
-    
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>產品圖片</th>
+        <th>產品名稱</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td style="width:200px" >
+        <div style="height: 100px; background-size: cover; background-position: center"
+          :style="{ 'background-image': `url(${product.imageUrl})` }">
+        </div>
+      </td>
+      <td>{{ product.title }}</td>
+    </tbody>
+  </table>
 </div>
 
 <!-- <div class="col-md-6">
@@ -45,18 +57,16 @@ export default {
   methods: {
     // 取得遠端產品資料並存入 products:{}
     async GetProduct() {
-      // 取 id
       // console.log(this.$route.params.id);
       const { id } = this.$route.params;
       const res = await axios({
         method: 'get',
         url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/product/${id}`,
-      }).catch((error) => {
-        console.log(error);
-      });
-
-      console.log(res);
-
+      })
+        // .catch((error) => {console.log(error);})
+        ;
+      // console.log(res);
+      this.product = res.data.product;
 
 
     },
