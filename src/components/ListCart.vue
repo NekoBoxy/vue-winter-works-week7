@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <!-- 改到這邊，要把得到的購物車資料逐筆渲染到畫面上-->
+      <!-- 尚未做單項刪除 & 數量增減 -->
       <tr v-for="item in carts" v-bind:key="item.id">
         <td>{{ item.product.title }}</td>
         <td>{{ item.qty }}</td>
@@ -25,10 +25,14 @@
     </tfoot>
   </table>
   <div class="text-end">
-    <button class="btn btn-outline-primary" v-on:click="clearCarts">
+    <button class="btn btn-outline-primary" v-on:click="clearAll">
       清空購物車
     </button>
   </div>
+  <!-- 做購買者資訊表單 -->
+  <form action="">
+
+  </form>
 </template>
 
 <script>
@@ -37,6 +41,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      data: {},
       carts: null,
       final_total: 0,
       total: 0,
@@ -55,12 +60,17 @@ export default {
       // hint: final_total & total 跟 carts 是不同層的=_=+
       this.final_total = response.data.data.final_total;
       this.total = response.data.data.total;
-      console.log("成功取得購物車清單");
+      console.log("已取得購物車清單");
+      this.data = response.data.data;
     },
-    clearCarts() {
-      this.carts = {};
-      this.final_total = 0;
-      this.total = 0;
+    async clearAll() {
+      const response = await axios({
+        method: "delete",
+        url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/carts`,
+      })
+      this.data = response.data.data;
+      console.log("已清空購物車");
+      this.getCart();
     },
   },
   async mounted() {
