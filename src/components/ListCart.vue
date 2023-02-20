@@ -30,9 +30,47 @@
     </button>
   </div>
   <!-- 做購買者資訊表單 -->
-  <form action="">
+  <div class="my-5 row-12 justify-content-center">
+  <v-form v-on:submit="handleSubmit" ref="form" class="col" v-slot="{ errors }">
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <v-field id="email" name="email" type="email" class="form-control" placeholder="請輸入 Email" :class="{ 'is-invalid': errors['email'] }" rules="email|required">
+      </v-field>
+      <error-message name="email" class="invalid-feedback"></error-message>
+    </div>
 
-  </form>
+    <div class="mb-3">
+      <label for="name" class="form-label">收件人姓名</label>
+      <v-field id="name" name="name" type="text" class="form-control" placeholder="請輸入姓名" :class="{ 'is-invalid': errors['name'] }" rules="required">
+      </v-field>
+      <error-message name="name" class="invalid-feedback"></error-message>
+    </div>
+    <div class="mb-3">
+      <label for="mobilePhone" class="form-label">收件人手機號碼</label>
+      <v-field id="mobilePhone" name="mobilePhone" type="text" class="form-control" placeholder="請輸入手機號碼" :class="{ 'is-invalid': errors['mobilePhone'] }" v-bind:rules="checkMobilePhone">
+      </v-field>
+      <error-message name="mobilePhone" class="invalid-feedback"></error-message>
+    </div>
+
+    <div class="mb-3">
+      <label for="address" class="form-label">收件人地址</label>
+      <v-field id="address" name="address" type="text" class="form-control" placeholder="請輸入地址" :class="{ 'is-invalid': errors['address'] }" rules="required">
+      </v-field>
+      <error-message name="address" class="invalid-feedback"></error-message>
+    </div>
+
+    <div class="mb-3">
+      <label for="message" class="form-label">留言</label>
+      <v-field id="message" name="message" class="form-control" cols="30" rows="10" rules="required" as="textarea"></v-field>
+    </div>
+
+    <div class="text-end">
+      <button type="submit" class="btn btn-danger">
+        送出訂單
+      </button>
+    </div>
+  </v-form>
+</div>
 </template>
 
 <script>
@@ -46,6 +84,9 @@ export default {
       final_total: 0,
       total: 0,
     };
+  },
+  components: {
+
   },
   methods: {
     async getCart() {
@@ -71,6 +112,13 @@ export default {
       this.data = response.data.data;
       console.log("已清空購物車");
       this.getCart();
+    },
+    checkMobilePhone(value) {
+      const mobilePhone = /^09[0-9]{8}$/ // 正規表達式
+      return mobilePhone.test(value) ? true : '需要正確的電話號碼'
+    },
+    handleSubmit(values) {
+      console.log(values);
     },
   },
   async mounted() {
