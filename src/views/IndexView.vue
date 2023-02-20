@@ -5,9 +5,9 @@
     <!-- <span>｜</span>
     <RouterLink to="/about">關於我們</RouterLink> -->
     <span>｜</span>
-    <RouterLink to="/cart">購物車</RouterLink>
-    <span>｜</span>
     <RouterLink to="/products">產品一覽</RouterLink>
+    <span>｜</span>
+    <RouterLink to="/cart">購物車</RouterLink>
     <span>｜</span>
     <RouterLink to="/admin/orders">後台訂單一覽</RouterLink>
     <!-- 套用簡單 nav 樣式 -->
