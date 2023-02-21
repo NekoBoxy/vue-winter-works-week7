@@ -2,6 +2,10 @@
   <div>我是後台 AdminProducts :D</div>
 </template>
 
-<script></script>
+<script>
+export default {
+
+};
+</script>
 
 <style scoped></style>

@@ -1,9 +1,15 @@
 <template>
-  <div>我是後台 products</div>
+  <AdminProducts />
 </template>
 
-<script></script>
+<script>
+import AdminProducts from '../../components/admin/AdminProducts.vue';
 
-<style scoped>
+export default {
+  components: {
+    AdminProducts,
+  },
+};
+</script>
 
-</style>
+<style scoped></style>
