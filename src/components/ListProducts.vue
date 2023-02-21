@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr v-for="product in products" v-bind:key="product.id">
-        <td style="width:200px" >
+        <td style="width:200px">
           <!-- img 不好控，故用 div 控 -->
           <div style="height: 100px; background-size: cover; background-position: center"
             :style="{ 'background-image': `url(${product.imageUrl})` }">
