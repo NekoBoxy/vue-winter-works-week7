@@ -1,6 +1,17 @@
 <template>
+  
   <table class="table align-middle">
     <thead>
+      <tr class="text-right">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>新增產品</td>
+      </tr>
       <tr>
         <td>圖片</td>
         <td>分類</td>
@@ -25,10 +36,10 @@
         <td>{{ product.price }}</td>
         <td>{{ product.price.is_enabled }}</td>
         <td>
-          <button class="btn btn-outline-secondary">編輯</button>
+          <button v-on:click="editProduct(id)" class="btn btn-outline-secondary">編輯</button>
         </td>
         <td>
-          <button class="btn btn-outline-secondary">刪除</button>
+          <button v-on:click="delProduct(id)" class="btn btn-outline-secondary">刪除</button>
         </td>
       </tr>
     </tbody>
@@ -46,6 +57,7 @@ export default {
   data() {
     return {
       products: {},
+      product: {},
       pagination: {
         total_pages: "",
         current_page: 1,
@@ -66,10 +78,30 @@ export default {
       }).catch((error) => {
         console.log("error", error);
       });
-      console.log("res", response.data.products[0]);
+      // console.log("res", response.data.products[0]);
+      console.log("res", response.data.products);
       this.products = response.data.products;
       this.pagination = response.data.pagination;
       console.log("已取得遠端產品資料");
+    },
+    getId() {
+
+    },
+    // editProduct(id) {
+
+    // },
+    async delProduct(id) {
+      const response = await axios({
+        method: "delete",
+        url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/admin/product/${id}`,
+      }).catch((error) => {
+        console.log("error", error);
+      });
+      console.log(response);
+      // this.products = response.data.products;
+      // this.pagination = response.data.pagination;
+      console.log("已刪除資料");
+      // this.getAllProducts();
     },
   },
   async mounted() {
