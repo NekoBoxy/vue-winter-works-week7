@@ -108,7 +108,7 @@ export default {
       const response = await axios({
         method: "delete",
         url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/carts`,
-      })
+      });
       this.data = response.data.data;
       console.log("已清空購物車");
       this.getCart();

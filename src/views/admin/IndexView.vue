@@ -13,13 +13,13 @@
             <RouterLink to="/">回前台首頁</RouterLink>
           </li>
           <li class="nav-item nav-link p-3">
+            <RouterLink to="/admin/products">產品一覽</RouterLink>
+          </li>
+          <li class="nav-item nav-link p-3">
             <RouterLink to="/admin/orders">訂單一覽</RouterLink>
           </li>
           <li class="nav-item nav-link p-3">
             <RouterLink to="/admin/coupons">優惠碼一覽</RouterLink>
-          </li>
-          <li class="nav-item nav-link p-3">
-            <RouterLink to="/admin/products">產品一覽</RouterLink>
           </li>
         </ul>
       </div>
