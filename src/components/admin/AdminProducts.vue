@@ -33,7 +33,10 @@
           <td>{{ product.unit }}</td>
           <td>{{ product.origin_price }}</td>
           <td>{{ product.price }}</td>
-          <td>{{ product.price.is_enabled }}</td>
+          <td>
+            <span v-if="product.is_enabled">啟用</span>
+            <span v-else>未啟用</span>
+          </td>
           <td>
             <button v-on:click="editProduct(product)" type="button" class="btn btn-outline-secondary">編輯</button>
           </td>
