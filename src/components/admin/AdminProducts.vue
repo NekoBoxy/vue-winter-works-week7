@@ -1,7 +1,8 @@
 <template>
   <AdminProductDelete :product="product" @on_finish="getAllProducts()" ref="adminDeleteProduct"></AdminProductDelete>
+  <AdminProductEdit :product="product" :status="status" @on_finish="getAllProducts()" ref="adminEditProduct"></AdminProductEdit>
   <div class="text-end mt-4">
-    <button class="btn btn-primary" @click="addProduct">
+    <button class="btn btn-primary" @click="addProduct()">
       建立新的產品
     </button>
   </div>
@@ -49,12 +50,14 @@
 <script>
 import axios from "axios";
 import AdminProductDelete from "./AdminProductDelete.vue";
+import AdminProductEdit from "./AdminProductEdit.vue";
 
 
 
 export default {
   data() {
     return {
+      status: "",
       product: {},
       products: {},
       pagination: {
@@ -67,16 +70,21 @@ export default {
     };
   },
   components: {
-    AdminProductDelete, //QQBoxy
+    AdminProductDelete,
+    AdminProductEdit,
   },
   methods: {
-    async addProduct() { //QQBoxy
-
+    async addProduct() {
+      this.status = "new";
+      this.product = {};
+      this.$refs.adminEditProduct.show();
     },
-    async editProduct() { //QQBoxy
-
+    async editProduct(product) {
+      this.status = "edit";
+      this.product = product;
+      this.$refs.adminEditProduct.show();
     },
-    async delProduct(product) { //QQBoxy
+    async delProduct(product) {
       this.product = product;
       this.$refs.adminDeleteProduct.show();
     },
