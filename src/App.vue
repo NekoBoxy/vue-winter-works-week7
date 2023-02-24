@@ -1,4 +1,5 @@
 <template>
+  <!-- <vue-loading v-model:active="isLoading"></vue-loading> -->
   <RouterView />
 </template>
 
@@ -6,14 +7,25 @@
 import { RouterLink, RouterView } from "vue-router";
 
 export default {
+  data() {
+    return {
+      // isLoading: false,
+    }
+  },
   props: {
     RouterLink,
     RouterView,
   },
-  components: {},
+  components: {
+
+  },
+  mounted() {
+    // this.isLoading = true;
+    // setTimeout(() => {
+    //   this.isLoading = false;
+    // }, 1000)
+  },
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
