@@ -8,11 +8,6 @@ import { localize, setLocale } from '@vee-validate/i18n';
 import en from '@vee-validate/i18n/dist/locale/en.json';
 import zh_TW from './i18n/zh_TW.json';
 
-// vue loading 作為元件使用, 1.引入
-// import Loading from 'vue-loading-overlay';
-// import 'vue-loading-overlay/dist/css/index.css';
-
-
 // Import all of Bootstrap's JS
 // eslint-disable-next-line no-unused-vars
 import * as bootstrap from "bootstrap";
@@ -47,7 +42,6 @@ app.use(router);
 app.component("v-form", Form);
 app.component("v-field", Field);
 app.component("error-message", ErrorMessage);
-// 2. vue loading 註冊為全域元件
-// app.component("vue-loading", Loading);
+
 
 app.mount("#app");

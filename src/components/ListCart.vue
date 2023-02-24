@@ -117,8 +117,26 @@ export default {
       const mobilePhone = /^09[0-9]{8}$/ // 正規表達式
       return mobilePhone.test(value) ? true : '需要正確的電話號碼'
     },
-    handleSubmit(values) {
-      console.log(values);
+    async handleSubmit(values) {
+      await axios({
+        method: 'post',
+        url: `${import.meta.env.VITE_BASE_URL}/v2/api/${import.meta.env.VITE_BASE_PATH}/order`,
+        data: {
+          data: {
+            user: {
+              email: values.email,
+              name: values.name,
+              tel: values.mobilePhone,
+              address: values.address,
+            },
+            message: values.message,
+          }
+        }
+      }).catch((error) => {
+        alert(error.response.data.message);
+      });
+      this.$refs.form.resetForm();
+      await this.getCart();
     },
   },
   async mounted() {
