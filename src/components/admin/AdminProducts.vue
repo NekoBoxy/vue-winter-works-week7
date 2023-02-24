@@ -47,14 +47,20 @@
       </tbody>
       <tfoot></tfoot>
     </table>
+    <div class="row">
+      <div class="col-12">
+        <BPagination :total_pages="pagination.total_pages" @on_page="getAllProducts"></BPagination>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+
 import AdminProductDelete from "./AdminProductDelete.vue";
 import AdminProductEdit from "./AdminProductEdit.vue";
-
+import BPagination from "../BPagination.vue";
 
 
 export default {
@@ -75,6 +81,7 @@ export default {
   components: {
     AdminProductDelete,
     AdminProductEdit,
+    BPagination,
   },
   methods: {
     async addProduct() {
